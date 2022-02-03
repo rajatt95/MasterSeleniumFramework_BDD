@@ -11,8 +11,6 @@ It has a concept of Atomic tests (Achieved by Selenium WebDriver API and RestAss
 # Atomic Tests:
 ![image](https://user-images.githubusercontent.com/26399692/138962929-70094e77-ff3c-405e-95f8-c91c4e0912a6.png)
 ------------------------------------------------------------
-
-------------------------------------------------------------
 [Cucumber_Reports_Local.pdf](https://github.com/rajatt95/MasterSeleniumFramework_BDD/files/7998343/Cucumber_Reports_Local.pdf)
 ![image](https://user-images.githubusercontent.com/26399692/152431537-75cab046-67a6-4387-a980-f3dc19031f5c.png)
 ------------------------------------------------------------
