@@ -11,5 +11,11 @@ It has a concept of Atomic tests (Achieved by Selenium WebDriver API and RestAss
 # Atomic Tests:
 ![image](https://user-images.githubusercontent.com/26399692/138962929-70094e77-ff3c-405e-95f8-c91c4e0912a6.png)
 ------------------------------------------------------------
-[screencapture-reports-cucumber-io-reports-be0a4250-1a8e-4c4d-9ac4-3a0924f66305-2022-02-04-01_08_20.pdf](https://github.com/rajatt95/MasterSeleniumFramework_BDD/files/7998310/screencapture-reports-cucumber-io-reports-be0a4250-1a8e-4c4d-9ac4-3a0924f66305-2022-02-04-01_08_20.pdf)
-[screencapture-file-Users-rajatverma-Desktop-Work-Local-Eclipse-WS-LearningWS-UDEMY-OC-Cucumber-BDD-MasterSeleniumFramework-BDD-target-cucumber-cucumber-html-2022-02-04-01_08_54.pdf](https://github.com/rajatt95/MasterSeleniumFramework_BDD/files/7998313/screencapture-file-Users-rajatverma-Desktop-Work-Local-Eclipse-WS-LearningWS-UDEMY-OC-Cucumber-BDD-MasterSeleniumFramework-BDD-target-cucumber-cucumber-html-2022-02-04-01_08_54.pdf)
+
+------------------------------------------------------------
+[Cucumber_Reports_Local.pdf](https://github.com/rajatt95/MasterSeleniumFramework_BDD/files/7998343/Cucumber_Reports_Local.pdf)
+![image](https://user-images.githubusercontent.com/26399692/152431537-75cab046-67a6-4387-a980-f3dc19031f5c.png)
+------------------------------------------------------------
+[Cucumber_Reports_Cloud.pdf](https://github.com/rajatt95/MasterSeleniumFramework_BDD/files/7998338/Cucumber_Reports_Cloud.pdf)
+![image](https://user-images.githubusercontent.com/26399692/152431482-e010a8c0-25b8-425f-be92-83d0f9a52fb2.png)
+
