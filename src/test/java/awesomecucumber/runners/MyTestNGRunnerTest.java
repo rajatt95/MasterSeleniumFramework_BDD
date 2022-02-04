@@ -5,10 +5,15 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
-		plugin = { "html:target/cucumber/cucumber.html" }, 
+		plugin = { 
+				"html:target/cucumber/cucumber.html" ,
+				"me.jvt.cucumber.report.PrettyReports:target/cucumber/"
+		}, 
 		glue = { "awesomecucumber" },
 		// glue = {"awesomecucumber.stepdefinitions","awesomecucumber.hooks"},
-		features = "src/test/resources/features")
+		features = "src/test/resources/features",
+		//tags = "@smoke")
+		tags = "@regression")
 public class MyTestNGRunnerTest extends AbstractTestNGCucumberTests {
 
 	/**

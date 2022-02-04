@@ -4,7 +4,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ProductPage extends BasePage {
 
@@ -25,43 +24,38 @@ public class ProductPage extends BasePage {
 	}
 
 	public void enterQuantity(int quantity) {
-		WebElement quantityInputFld = wait.until(ExpectedConditions.elementToBeClickable(this.quantityInputFld));
-		quantityInputFld.clear();
-		quantityInputFld.sendKeys(Integer.toString(quantity));
+		clearAndSendKeys(quantityInputFld, Integer.toString(quantity));
 	}
 
 	public int getQuantity() {
-		return Integer.parseInt(
-				wait.until(ExpectedConditions.elementToBeClickable(this.quantityInputFld)).getAttribute("value"));
+		return Integer.parseInt(getElementElementAttribute_Value(quantityInputFld));
 	}
 
 	public void addToCart() {
-		wait.until(ExpectedConditions.elementToBeClickable(addToCartBtn)).click();
-		wait.until(ExpectedConditions.elementToBeClickable(viewCartBtn)).click();
+		click(addToCartBtn);
+		click(viewCartBtn);
 	}
 
 	public void pressAddToCartBtn() {
-		wait.until(ExpectedConditions.elementToBeClickable(addToCartBtn)).click();
+		click(addToCartBtn);
 	}
 
 	public String getValidationMsg() {
-		return wait.until(ExpectedConditions.elementToBeClickable(this.quantityInputFld))
-				.getAttribute("validationMessage");
+		return getElementElementCustomAttribute(quantityInputFld, "validationMessage");
 	}
 
 	public String getBannerTxt() {
-		return wait.until(ExpectedConditions.visibilityOf(bannerTxt)).getText();
+		return getElementText(bannerTxt);
 	}
 
 	public int updateQuantityUsingArrows(String direction) {
 		switch (direction) {
-
 		case "up": {
-			wait.until(ExpectedConditions.elementToBeClickable(this.quantityInputFld)).sendKeys(Keys.ARROW_UP);
+			waitForElementToBeClickable(quantityInputFld).sendKeys(Keys.ARROW_UP);
 			break;
 		}
 		case "down": {
-			wait.until(ExpectedConditions.elementToBeClickable(this.quantityInputFld)).sendKeys(Keys.ARROW_DOWN);
+			waitForElementToBeClickable(quantityInputFld).sendKeys(Keys.ARROW_DOWN);
 			break;
 		}
 		default:

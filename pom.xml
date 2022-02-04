@@ -8,7 +8,9 @@
 		<maven.compiler.source>8</maven.compiler.source>
 		<maven.compiler.target>8</maven.compiler.target>
 		<!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> -->
-		<cucumber.version>7.2.3</cucumber.version>
+		<!-- <cucumber.version>7.2.3</cucumber.version> -->
+
+		<cucumber.version>7.2.0</cucumber.version>
 	</properties>
 
 
@@ -93,6 +95,26 @@
 			<version>2.13.1</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/me.jvt.cucumber/reporting-plugin -->
+		<dependency>
+			<groupId>me.jvt.cucumber</groupId>
+			<artifactId>reporting-plugin</artifactId>
+			<version>${cucumber.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.zeroturnaround/zt-zip -->
+		<dependency>
+			<groupId>org.zeroturnaround</groupId>
+			<artifactId>zt-zip</artifactId>
+			<version>1.14</version>
+		</dependency>
+
+		<!--https://mvnrepository.com/artifact/com.sun.mail/javax.mail/		 -->
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.6.2</version>
+		</dependency>
 
 	</dependencies>
 </project>
