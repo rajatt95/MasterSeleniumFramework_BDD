@@ -17,6 +17,25 @@ It has a concept of Atomic tests (Achieved by Selenium WebDriver API and RestAss
 # Atomic Tests:
 ![image](https://user-images.githubusercontent.com/26399692/138962929-70094e77-ff3c-405e-95f8-c91c4e0912a6.png)
 ------------------------------------------------------------
+Updations done:
+------------------------------------------------------------
+**Reports (me.jvt.cucumber -> reporting-plugin) ** 
+![image](https://user-images.githubusercontent.com/26399692/152516617-160ec7de-c330-490e-9cb9-78b7d50cbe5d.png)
+------------------------------------------------------------
+**Screenshot on failure to Reports** 
+![image](https://user-images.githubusercontent.com/26399692/152516718-701a6cc9-bf46-475f-824f-406413fa8288.png)
+------------------------------------------------------------
+**Zip reports**
+------------------------------------------------------------
+**Browser instances from pom.xml**
+![image](https://user-images.githubusercontent.com/26399692/152516862-973ca6e9-bf4e-45de-85f5-f7fba24f4927.png)
+------------------------------------------------------------
+**Execution**
+1. mvn clean test (This will execute with default env (Stg) and browser (Edge))
+2. mvn clean test -Denv=INT -Dbrowser=firefox (his will execute with on Int and Firefox browser)
+3. mvn clean test -Denv=INT -Dbrowser=firefox -Dcucumber.filter.tags@smoke (This will execute with on Int and Firefox browser and scenarios tagged as smoke)
+------------------------------------------------------------
+
 [Cucumber_Reports_Local.pdf](https://github.com/rajatt95/MasterSeleniumFramework_BDD/files/7998343/Cucumber_Reports_Local.pdf)
 ![image](https://user-images.githubusercontent.com/26399692/152431537-75cab046-67a6-4387-a980-f3dc19031f5c.png)
 ------------------------------------------------------------
