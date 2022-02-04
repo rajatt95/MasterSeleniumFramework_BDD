@@ -1,12 +1,12 @@
 package awesomecucumber.pages;
 
-import awesomecucumber.domainobjects.BillingDetails;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import awesomecucumber.domainobjects.BillingDetails;
 
 public class CheckoutPage extends BasePage {
 
@@ -47,30 +47,23 @@ public class CheckoutPage extends BasePage {
 	}
 
 	public CheckoutPage enterBillingFirstName(String billingFirstName) {
-		WebElement e = wait.until(ExpectedConditions.visibilityOf(billingFirstnameFld));
-		e.clear();
-		e.sendKeys(billingFirstName);
+		clearAndSendKeys(billingFirstnameFld, billingFirstName);
 		return this;
 	}
 
 	public CheckoutPage enterBillingLastName(String billingLastName) {
-		WebElement e = wait.until(ExpectedConditions.visibilityOf(billingLastNameFld));
-		e.clear();
-		e.sendKeys(billingLastName);
+		clearAndSendKeys(billingLastNameFld, billingLastName);
 		return this;
 	}
 
 	public CheckoutPage enterBillingAddressLineOne(String billingAddressLineOne) {
-		WebElement e = wait.until(ExpectedConditions.visibilityOf(billingAddressOneFld));
-		e.clear();
-		e.sendKeys(billingAddressLineOne);
+		clearAndSendKeys(billingAddressOneFld, billingAddressLineOne);
+
 		return this;
 	}
 
 	public CheckoutPage enterBillingCity(String billingCity) {
-		WebElement e = wait.until(ExpectedConditions.visibilityOf(billingCityFld));
-		e.clear();
-		e.sendKeys(billingCity);
+		clearAndSendKeys(billingCityFld, billingCity);
 		return this;
 	}
 
@@ -83,11 +76,13 @@ public class CheckoutPage extends BasePage {
 		 * There is a issue open for it.
 		 * 
 		 */
-		wait.until(ExpectedConditions.elementToBeClickable(alternateBillingStateDropDown)).click();
-		WebElement e = wait
+		click(alternateBillingStateDropDown);
+//		wait.until(ExpectedConditions.elementToBeClickable(alternateBillingStateDropDown)).click();
+		WebElement element = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[text()='" + billingStateName + "']")));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", e);
-		e.click();
+
+		scrollToElement(element);
+		click(element);
 
 		/*
 		 * Select select = new
@@ -98,16 +93,12 @@ public class CheckoutPage extends BasePage {
 	}
 
 	public CheckoutPage enterBillingZip(String billingZip) {
-		WebElement e = wait.until(ExpectedConditions.visibilityOf(billingZipFld));
-		e.clear();
-		e.sendKeys(billingZip);
+		clearAndSendKeys(billingZipFld, billingZip);
 		return this;
 	}
 
 	public CheckoutPage enterBillingEmail(String billingEmail) {
-		WebElement e = wait.until(ExpectedConditions.visibilityOf(billingEmailFld));
-		e.clear();
-		e.sendKeys(billingEmail);
+		clearAndSendKeys(billingEmailFld, billingEmail);
 		return this;
 	}
 
@@ -117,16 +108,18 @@ public class CheckoutPage extends BasePage {
 				.enterBillingAddressLineOne(billingDetails.getBillingAddressOne())
 				.enterBillingCity(billingDetails.getBillingCity())
 				.selectBillingState(billingDetails.getBillingStateName())
-				.enterBillingZip(billingDetails.getBillingZip()).enterBillingEmail(billingDetails.getBillingEmail());
+				.enterBillingZip(billingDetails.getBillingZip())
+				.enterBillingEmail(billingDetails.getBillingEmail());
 	}
 
 	public CheckoutPage placeOrder() {
 		waitForOverlaysToDisappear(overlay);
-		wait.until(ExpectedConditions.elementToBeClickable(placeOrderBtn)).click();
+		click(placeOrderBtn);
 		return this;
 	}
 
 	public String getNotice() {
-		return wait.until(ExpectedConditions.visibilityOf(noticeTxt)).getText();
+		return getElementText(noticeTxt);
+
 	}
 }

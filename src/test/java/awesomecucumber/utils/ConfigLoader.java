@@ -17,6 +17,8 @@ import awesomecucumber.enums.EnvType;
 public class ConfigLoader {
 
 	private static final String BASE_URL = "baseUrl";
+	private static final String SEND_EMAIL_TO_USERS = "send_email_to_users";
+
 
 	// private final Properties properties;
 	private Properties properties;
@@ -67,6 +69,10 @@ public class ConfigLoader {
 		return getPropertyValue(BASE_URL);
 	}
 
+	public String getSendEmailToUsers() {
+		return getPropertyValue(SEND_EMAIL_TO_USERS);
+	}
+	
 	private String getPropertyValue(String propertyKey) {
 		String prop = properties.getProperty(propertyKey);
 		if (prop != null) {
@@ -75,12 +81,6 @@ public class ConfigLoader {
 			throw new RuntimeException("Property " + propertyKey + " is not specified in the config.properties file");
 		}
 	}
-
-//	public String getBaseUrl() {
-//		String prop = properties.getProperty(BASE_URL);
-//		if (prop != null)
-//			return prop;
-//		else
-//			throw new RuntimeException("property baseUrl is not specified in the stage_config.properties file");
-//	}
+	
+	
 }

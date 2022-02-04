@@ -3,9 +3,6 @@ package awesomecucumber.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import static awesomecucumber.constants.FrameworkConstants.ATTRIBUTE_VALUE;
 
 public class CartPage extends BasePage {
 
@@ -23,15 +20,14 @@ public class CartPage extends BasePage {
 	}
 
 	public String getProductName() {
-		return wait.until(ExpectedConditions.visibilityOf(productNameFld)).getText();
+		return getElementText(productNameFld);
 	}
 
 	public int getProductQuantity() {
-		return Integer.parseInt(
-				wait.until(ExpectedConditions.visibilityOf(productQuantityFld)).getAttribute(ATTRIBUTE_VALUE));
+		return Integer.parseInt(getElementElementAttribute_Value(productQuantityFld));
 	}
 
 	public void checkout() {
-		wait.until(ExpectedConditions.elementToBeClickable(proceedToCheckoutBtn)).click();
+		click(proceedToCheckoutBtn);
 	}
 }
