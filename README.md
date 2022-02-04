@@ -12,6 +12,16 @@ With further updates - This project is designed and developed with the help of -
 <img width="717" alt="Screenshot by Snip My at 04-Feb-2022 at 2_41_05 AM" src="https://user-images.githubusercontent.com/26399692/152430606-3a88d967-4ebd-4976-a601-c75f2477d79d.png">
 
 ------------------------------------------------------------
+**Framework features:**
+1. Uses Domain objects
+2. Support multiple Runners - TestNG, JUnit, CLI
+3. Uses Dependency Injection Framework
+4. Supports parallel execution
+5. Uses API to setup the Application state
+6. Captures screenshot on Scenario Failure
+7. Supports command line execution using Maven
+8. Supports CI/CD integration
+------------------------------------------------------------
 It has a concept of Atomic tests (Achieved by Selenium WebDriver API and RestAssured API)
 ------------------------------------------------------------
 # Atomic Tests:
