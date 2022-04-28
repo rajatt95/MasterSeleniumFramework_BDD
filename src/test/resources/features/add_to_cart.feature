@@ -7,7 +7,7 @@ Feature: Add to cart
 
   Rule: Add from Store
 
-    @smoke
+    @smoke @demo
     Scenario Outline: Add one quantity from Store
       Given I'm on the Store Page
       When I add a "<product_name>" to the cart

@@ -12,8 +12,9 @@ import org.testng.annotations.DataProvider;
 		glue = { "awesomecucumber" },
 		// glue = {"awesomecucumber.stepdefinitions","awesomecucumber.hooks"},
 		features = "src/test/resources/features",
-		//tags = "@smoke")
-		tags = "@regression")
+		tags = "@smoke")
+		//tags = "@regression")
+		//tags = "@demo")
 public class MyTestNGRunnerTest extends AbstractTestNGCucumberTests {
 
 	/**

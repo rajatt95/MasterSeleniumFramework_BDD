@@ -5,27 +5,35 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
+		<maven.surefire.plugin.version>3.0.0-M5</maven.surefire.plugin.version>
+		<!--	The default thread count of the dataprovider in parallel mode is 10-->
+		<dataproviderthreadcount.value>3</dataproviderthreadcount.value>
 		<maven.compiler.source>8</maven.compiler.source>
 		<maven.compiler.target>8</maven.compiler.target>
 		<!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> -->
 		<!-- <cucumber.version>7.2.3</cucumber.version> -->
-
 		<cucumber.version>7.2.0</cucumber.version>
+		<selenium.version>4.1.2</selenium.version>
+		<webdrivermanager.version>4.4.3</webdrivermanager.version>
+		<rest.assured.version>4.4.0</rest.assured.version>
+		<jackson.databind.version>2.13.1</jackson.databind.version>
+		<zt.zp.version>1.12</zt.zp.version>
+		<javax.mail.version>1.6.2</javax.mail.version>
 	</properties>
-
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M5</version>
+				<version>${maven.surefire.plugin.version}</version>
+
 				<configuration>
 					<properties>
 						<property>
 							<name>dataproviderthreadcount</name>
 							<!--	The default thread count of the dataprovider in parallel mode is 10-->
-							<value>3</value>
+							<value>${dataproviderthreadcount.value}</value>
 						</property>
 					</properties>
 					<!--	    <parallel>methods</parallel>
@@ -71,28 +79,29 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.1.2</version>
+			<version>${selenium.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
-			<version>4.4.3</version>
+			<version>${webdrivermanager.version}</version>
+
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
-			<version>4.4.0</version>
+			<version>${rest.assured.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.13.1</version>
+			<version>${jackson.databind.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/me.jvt.cucumber/reporting-plugin -->
@@ -106,15 +115,23 @@
 		<dependency>
 			<groupId>org.zeroturnaround</groupId>
 			<artifactId>zt-zip</artifactId>
-			<version>1.14</version>
+			<version>${zt.zp.version}</version>
 		</dependency>
 
 		<!--https://mvnrepository.com/artifact/com.sun.mail/javax.mail/		 -->
 		<dependency>
 			<groupId>com.sun.mail</groupId>
 			<artifactId>javax.mail</artifactId>
-			<version>1.6.2</version>
+			<version>${javax.mail.version}</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.0.9</version>
+		</dependency>
+
 
 	</dependencies>
 </project>
